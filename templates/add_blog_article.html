@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="DataSoft IT Solutions & Services Template"
+    />
+    <link href="{% static 'images/favicon/favicon.png' %}" rel="icon" />
+    <title>DataSoft IT Solutions & Services Template</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/libraries.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <!-- Your form for adding a new blog article -->
+    <section class="services-layout2 pb-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3">
+            <form method="post" action="{% url 'submit_blog_article' %}">
+              {% csrf_token %}
+              <div class="heading text-center mb-50">
+                <h2 class="heading__subtitle">Share Your Insights</h2>
+                <h3 class="heading__title">Add a New Blog Article</h3>
+              </div>
+              <!-- /.heading -->
+
+              <!-- Form fields -->
+              <div class="form-group">
+                <label for="blogTitle">Blog Title:</label>
+                <input
+                  type="text"
+                  id="blogTitle"
+                  name="blogTitle"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="blogContent">Blog Content:</label>
+                <textarea
+                  id="blogContent"
+                  name="blogContent"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="blogImage">Blog Image URL:</label>
+                <input
+                  type="text"
+                  id="blogImage"
+                  name="blogImage"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="blogLink">Blog Link:</label>
+                <input
+                  type="text"
+                  id="blogLink"
+                  name="blogLink"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn__primary">Submit</button>
+            </form>
+          </div>
+          <!-- /.col-lg-6 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="DataSoft IT Solutions & Services Template"
+    />
+    <link href="{% static 'images/favicon/favicon.png' %}" rel="icon" />
+    <title>DataSoft IT Solutions & Services Template</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/libraries.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <!-- Your form for addindustry.html -->
+    <section class="services-layout2 pb-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3">
+            <form method="post" action="{% url 'submitindustry' %}">
+              {% csrf_token %}
+              <div class="heading text-center mb-50">
+                <h2 class="heading__subtitle">
+                  Nationwide Service, Local Expertise
+                </h2>
+                <h3 class="heading__title">
+                  Offer The Latest Software And Solutions To Our customers!
+                </h3>
+              </div>
+              <!-- /.heading -->
+
+              <!-- Form fields -->
+              <div class="form-group">
+                <label for="serviceTitle">Service Title:</label>
+                <input
+                  type="text"
+                  id="serviceTitle"
+                  name="serviceTitle"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="serviceDescription">Service Description:</label>
+                <textarea
+                  id="serviceDescription"
+                  name="serviceDescription"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="serviceImage">Service Image URL:</label>
+                <input
+                  type="text"
+                  id="serviceImage"
+                  name="serviceImage"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="serviceLink">Service Link:</label>
+                <input
+                  type="text"
+                  id="serviceLink"
+                  name="serviceLink"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn__primary">Submit</button>
+            </form>
+          </div>
+          <!-- /.col-lg-6 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.Services Layout 2 -->
+  </body>
+</html>
